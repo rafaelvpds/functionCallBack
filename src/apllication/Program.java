@@ -17,8 +17,9 @@ public class Program {
 		listaProdutos.add(new Product("Tablet", 350.50));
 		listaProdutos.add(new Product("HD case", 80.90));
 
-		ProductService p = new ProductService();
-		double sum = p.filterSum(listaProdutos);
+		ProductService ps = new ProductService();
+		// double sum = ps.filterSum(listaProdutos, p -> p.getName().charAt(0) == 'M');
+		double sum = ps.filterSum(listaProdutos, p -> p.getPrice() <= 100);
 
 		System.out.println("Sum: " + String.format("%.2f", sum));
 	}
